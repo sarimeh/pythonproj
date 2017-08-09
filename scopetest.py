@@ -17,6 +17,6 @@ def scope_test():
     print("After nonlocal assignment:", spam)
     do_global()
     print("After global assignment:", spam)
-dddd
+ddddxxx
 scope_test()
 print("In global scope:", spam)
