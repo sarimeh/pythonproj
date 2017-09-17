@@ -3,32 +3,15 @@ from pygame.locals import *
 import time
 import math
 
-class Track:
-    def __init__(self, trackimage, screen):
-        self.trackimage = trackimage
-        self.screen = screen
-
-class Car:
-    def __init__(self, carimage, forwardspeed, reversespeed):
-        self.track = track
-        self.carimage = carimage
-        self.forwardspeed = forwardspeed
-        self.reversespeed = reversespeed
-
-
-
 
 
 pygame.init()
+ok = 1
 font = pygame.font.Font(None, 24)
 
-trackimage = pygame.image.load("resources/images/track2.png")
-carimage = pygame.image.load("resources/images/block2.png")
+track = pygame.image.load("resources/images/track2.png")
+player = pygame.image.load("resources/images/block2.png")
 screen = pygame.display.set_mode((600,600))
-
-track1 = Track(trackimage, screen)
-#car1 = Car(trackimage, scree
-
 colorBunt = (120,50,130)
 trackx= -540
 tracky= -1025
@@ -95,7 +78,9 @@ while running:
 
 
     for event in pygame.event.get():
+    # check if the event is the X button 
         if event.type==pygame.QUIT:
+            # if it is quit the game
             pygame.quit()
             exit(0)
 
