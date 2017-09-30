@@ -20,26 +20,32 @@ class Car:
         self.carposY = carposY
         
 def loadvariables():
-   test = 1
-
-
-def main():
-    pygame.init()
-    loadvariables()
-    font = pygame.font.Font(None, 24)
-
+    global trackimage, font, carimage, screen
+    global colorBunt, trackx, tracky
+    trackx = 1
+    print trackx
+    global MAX_FORWARD_SPEED, MAX_REVERSE_SPEED, xpos, ypos
     trackimage = pygame.image.load("resources/images/track2.png")
     carimage = pygame.image.load("resources/images/block2.png")
     screen = pygame.display.set_mode((600,600))
     colorBunt = (120,50,130)
-    trackx= -540
-    tracky= -1025
+    global trackx
+    trackx = -540
+    tracky = -1025
     MAX_FORWARD_SPEED = 5
     MAX_REVERSE_SPEED = -5
     xpos = 275
     ypos = 350 
 
-    track1 = Track(trackimage, screen, trackx, tracky,)
+
+
+def main():
+    pygame.init()
+    loadvariables()
+    print trackx
+    font = pygame.font.Font(None, 24)
+
+    track1 = Track(trackimage, screen, trackx, tracky)
     car1 = Car(carimage, MAX_FORWARD_SPEED, MAX_REVERSE_SPEED, xpos, ypos)
 
     keys=[False,False,False,False]
@@ -74,11 +80,10 @@ def main():
         playerrot = pygame.transform.rotate(carimage,direction)
         rect = playerrot.get_rect()
         rect.center = position
-        print Color
     
         
-        #text = font.render(str(Color), True, (150, 150, 0))
-        #screen.blit(text,(0,0))
+        text = font.render(str(Color), True, (150, 150, 0))
+        screen.blit(text,(0,0))
         text1 = font.render("speed: "+str(forward), True, (150, 150, 0))
         text2 = font.render("pos x: "+str(xpos), True, (150, 150, 0))
         text3 = font.render("pos y: "+str(ypos), True, (150, 150, 0))
@@ -86,7 +91,7 @@ def main():
         screen.set_at((190, 350), colorBunt)
         screen.blit(trackimage, (trackx,tracky))
         screen.blit(playerrot, rect)
-
+        screen.blit(text,(0,0))
         screen.blit(text1,(0,20))
         screen.blit(text2,(0,40))
         screen.blit(text3,(0,60))
@@ -127,3 +132,4 @@ def main():
 if __name__ == '__main__':
     # Unsere Main-Funktion aufrufen.
     main()
+    print end
