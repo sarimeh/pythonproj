@@ -13,7 +13,6 @@ class Track:
 
 class Car:
     def __init__(self, carimage, forwardspeed, reversespeed, carposX, carposY):
-        self.track = track
         self.carimage = carimage
         self.forwardspeed = forwardspeed
         self.reversespeed = reversespeed
@@ -21,6 +20,14 @@ class Car:
         self.carposY = carposY
         
 def loadvariables():
+   test = 1
+
+
+def main():
+    pygame.init()
+    loadvariables()
+    font = pygame.font.Font(None, 24)
+
     trackimage = pygame.image.load("resources/images/track2.png")
     carimage = pygame.image.load("resources/images/block2.png")
     screen = pygame.display.set_mode((600,600))
@@ -30,13 +37,7 @@ def loadvariables():
     MAX_FORWARD_SPEED = 5
     MAX_REVERSE_SPEED = -5
     xpos = 275
-    ypos = 350    
-
-
-def main():
-    pygame.init()
-    loadvariables()
-    font = pygame.font.Font(None, 24)
+    ypos = 350 
 
     track1 = Track(trackimage, screen, trackx, tracky,)
     car1 = Car(carimage, MAX_FORWARD_SPEED, MAX_REVERSE_SPEED, xpos, ypos)
@@ -69,13 +70,13 @@ def main():
         tracky-=movey
 
         position = (xpos, ypos)
-        playerrot = pygame.transform.rotate(player,direction)
+        playerrot = pygame.transform.rotate(carimage,direction)
         rect = playerrot.get_rect()
         rect.center = position
 
     
-    
-        text = font.render(str(Color), True, (150, 150, 0))
+        Color
+        #text = font.render(str(Color), True, (150, 150, 0))
         text1 = font.render("speed: "+str(forward), True, (150, 150, 0))
         text2 = font.render("pos x: "+str(xpos), True, (150, 150, 0))
         text3 = font.render("pos y: "+str(ypos), True, (150, 150, 0))
