@@ -47,6 +47,7 @@ def main():
     forward = 0
 
     running = 1
+    Color = 0
     while running:
         pygame.display.set_caption('driving')
         screen.fill(0)
@@ -73,25 +74,27 @@ def main():
         playerrot = pygame.transform.rotate(carimage,direction)
         rect = playerrot.get_rect()
         rect.center = position
-
+        print Color
     
-        Color
+        
         #text = font.render(str(Color), True, (150, 150, 0))
+        #screen.blit(text,(0,0))
         text1 = font.render("speed: "+str(forward), True, (150, 150, 0))
         text2 = font.render("pos x: "+str(xpos), True, (150, 150, 0))
         text3 = font.render("pos y: "+str(ypos), True, (150, 150, 0))
-        #screen.fill((0, 128, 255), ((190, 350), (1,1)))
+        screen.fill((0, 128, 255), ((190, 350), (1,1)))
         screen.set_at((190, 350), colorBunt)
-        screen.blit(track, (trackx,tracky))
+        screen.blit(trackimage, (trackx,tracky))
         screen.blit(playerrot, rect)
-        screen.blit(text,(0,0))
+
         screen.blit(text1,(0,20))
         screen.blit(text2,(0,40))
         screen.blit(text3,(0,60))
         pygame.draw.rect(screen, (0, 128, 255), pygame.Rect(200,350, 5, 5))
         pygame.display.flip()
-        time.sleep(0.02)
         Color =screen.get_at((199,350))
+        
+        time.sleep(0.02)
 
 
         for event in pygame.event.get():
