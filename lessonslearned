@@ -1,0 +1,19 @@
+was ich gelernt habe.
+
+- nicht immer github username und password eingeben:
+Run following command to enable credential caching.
+
+$ git config credential.helper store
+$ git push https://github.com/repo.git
+
+Username for 'https://github.com': <USERNAME>
+Password for 'https://USERNAME@github.com': <PASSWORD>
+
+- befehle um automatisiert github updates zu machen
+#!/bin/sh
+cd /home/memo/AI
+git pull
+git add *
+git commit -m "made changes"
+git push origin master
+
