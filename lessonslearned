@@ -17,3 +17,23 @@ git add *
 git commit -m "made changes"
 git push origin master
 
+- pygame für python3 installieren
+
+
+accepted
+You probably do not have pip3.5 installed, so I believe you it's not been easy. So one solution may be to start installing pip3.5. Based on this article on how to install pip3 in Ubuntu, here's a possible solution for your problem.
+
+First install setuptools for Python 3
+
+sudo apt-get install python3-setuptools
+Then install pip (which will include pip3.5):
+
+sudo easy_install3 pip
+After the previous two commands, you should have pip3.5 installed. Now you can simply do
+
+sudo pip3.5 install pygame
+I tried it on Ubuntu 16.04 and it worked.
+
+- gitupdateskript für ubuntu
+
+/home/memo/AI/pythonproj/mygitubuntu.sh
