@@ -19,6 +19,29 @@ class Car:
         self.carposX = carposX
         self.carposY = carposY
         
+#--------------------
+# zeug für den sonar arm
+def make_sonar_arm(self, x, y):
+    spread = 10  # Default spread.
+    distance = 20  # Gap before first sensor.
+    arm_points = []
+    # Make an arm. We build it flat because we'll rotate it about the
+    # center later.
+    for i in range(1, 40):
+        arm_points.append((distance + x + (spread * i), y))
+
+    return arm_points
+
+    def get_rotated_point(self, x_1, y_1, x_2, y_2, radians):
+        # Rotate x_2, y_2 around x_1, y_1 by angle.
+        x_change = (x_2 - x_1) * math.cos(radians) + \
+            (y_2 - y_1) * math.sin(radians)
+        y_change = (y_1 - y_2) * math.cos(radians) - \
+            (x_1 - x_2) * math.sin(radians)
+        new_x = x_change + x_1
+        new_y = height - (y_change + y_1)
+        return int(new_x), int(new_y)
+#--------------------
 
 def main():
     pygame.init()
@@ -44,6 +67,7 @@ def main():
     track1 = Track(trackimage, screen, trackx, tracky)
     car1 = Car(carimage, MAX_FORWARD_SPEED, MAX_REVERSE_SPEED, xpos, ypos)
 
+    arm_left = self.make_sonar_arm(x, y)
 
     while running:
         pygame.display.set_caption('driving')
