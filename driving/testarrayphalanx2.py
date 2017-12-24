@@ -17,7 +17,27 @@ class Phalanx:
         self.X = X
     def setY(Y):
         self.Y = Y
-        
+    def rotate(self, OriginX, OriginY, angle):
+	angle = math.radians(angle)
+    	newX = OriginX + math.cos(angle) * (self.X - OriginX) - math.sin(angle) * (self.Y - OriginY)
+    	newY = OriginY + math.sin(angle) * (self.X - OriginX) + math.cos(angle) * (self.Y - OriginY)
+	self.X = newX
+	self.Y = newY
+ 
+
+
+def rotate(origin, point, angle):
+    """
+    Rotate a point counterclockwise by a given angle around a given origin.
+
+    The angle should be given in radians.
+    """
+    ox, oy = origin
+    px, py = point
+
+    qx = ox + math.cos(angle) * (px - ox) - math.sin(angle) * (py - oy)
+    qy = oy + math.sin(angle) * (px - ox) + math.cos(angle) * (py - oy)
+    return qx, qy        
 
 def main():
     xpos = 275
@@ -38,20 +58,11 @@ def main():
         Px4[i] = Phalanx(Px4[i-1].X-10, Px4[i-1].Y-10)
         Px5[i] = Phalanx(Px5[i-1].X, Px5[i-1].Y-10) 
 
-    for i in xrange(0, 5):
-        Px1[i].printP()
-    print "----"
-    for i in xrange(0, 5):
-        Px2[i].printP()
-    print "----"
-    for i in xrange(0, 5):
-        Px3[i].printP()    
-    print "----"
-    for i in xrange(0, 5):
-        Px4[i].printP()
-    print "----"
-    for i in xrange(0, 5):
-        Px5[i].printP()
+#print rotate((100,100), (50, 100), math.radians(90))
+Pnew = Phalanx(50,100)
+Pnew.printP()
+Pnew.rotate(100, 100, 90)
+Pnew.printP()
 
 # Überprüfen, ob dieses Modul als Programm läuft und nicht in einem anderen Modul importiert wird.
 if __name__ == '__main__':
