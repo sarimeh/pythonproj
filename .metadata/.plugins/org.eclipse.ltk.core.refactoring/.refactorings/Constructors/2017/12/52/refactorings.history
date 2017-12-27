@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ChessGmae&apos; to &apos;Chess&apos;&#x0D;&#x0A;- Original project: &apos;Constructors&apos;&#x0D;&#x0A;- Original element: &apos;ChessGmae&apos;&#x0D;&#x0A;- Renamed element: &apos;Chess&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ChessGmae&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{ChessGmae.java[ChessGmae" matchStrategy="1" name="Chess" qualified="false" references="true" similarDeclarations="false" stamp="1514313165124" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,12 @@
+
+public class BoardGame extends Game {
+	BoardGame(){
+		super();
+		System.out.println("Creating a board game, " + difficulty);
+		name = "board game";
+	}
+	
+	void placeBoard() {
+		System.out.println("placing board for game: " + name);
+	}
+}

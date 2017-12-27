@@ -2,29 +2,31 @@
 -- START DISKCACHE_2
 C:\pythongit\.metadata\.plugins\org.eclipse.core.resources\.projects\AIdriving\com.python.pydev.analysis\v2_indexcache
 testdrive|1506783194331226000|C:\pythongit\AIdriving\testdrive.py
-170930_driving_v3|1506786491020052000|C:\pythongit\AIdriving\170930_driving_v3.py
+171009_driving_v4|1514231718585737000|C:\pythongit\AIdriving\171009_driving_v4.py
+170930_driving_v3|1514231718583732000|C:\pythongit\AIdriving\170930_driving_v3.py
 -- END DISKCACHE
 -- START DICTIONARY
-5
-3=Car
-4=Car.__init__
-5=Track.__init__
-2=Track
-1=170930_driving_v3
+6
+4=Car
+5=Car.__init__
+6=Track.__init__
+1=171009_driving_v4
+3=Track
+2=170930_driving_v3
 -- END DICTIONARY
 -- START TREE 1
 4
-car|1|Car!9@
-mai|1|main!10@
-mak|1|make_sonar_arm!10@
-tra|1|Track!9@
+car|2|Car!9@Car!17@
+mai|2|main!10@main!18@
+mak|1|make_sonar_arm!18@
+tra|2|Track!9@Track!17@
 -- END TREE
 -- START TREE 2
 6
-__i|2|__init__!2&10@__init__!3&10@
-car|3|carimage!4&11@carposX!4&11@carposY!4&11@
-for|1|forwardspeed!4&11@
-rev|1|reversespeed!4&11@
-scr|1|screen!5&11@
-tra|3|trackimage!5&11@trackposY!5&11@trackposX!5&11@
+__i|4|__init__!3&18@__init__!4&18@__init__!3&10@__init__!4&10@
+car|6|carimage!5&11@carposX!5&11@carimage!5&19@carposX!5&19@carposY!5&19@carposY!5&11@
+for|2|forwardspeed!5&19@forwardspeed!5&11@
+rev|2|reversespeed!5&11@reversespeed!5&19@
+scr|2|screen!6&19@screen!6&11@
+tra|6|trackposX!6&11@trackimage!6&19@trackposY!6&19@trackposY!6&11@trackimage!6&11@trackposX!6&19@
 -- END TREE
